@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import "../HomePage/HomePage.css";
 import LUMERA from "../assets/LUMERA.svg";
 import savuage from '../assets/savuage.svg'; // Adjust the path if needed
@@ -7,6 +8,7 @@ import bleu from '../assets/bleu.svg';
 import ultra from '../assets/ultra.svg';
 const HomePage = () => {
   const featuredRef = useRef(null);
+  const navigate = useNavigate();
 
   const handleExploreClick = () => {
     if (featuredRef.current) {
@@ -65,7 +67,11 @@ const HomePage = () => {
           Discover our most loved fragrances, curated for their exceptional quality and timeless appeal.
         </p>
         <div className="featured-grid">
-          <div className="featured-card">
+          <div
+            className="featured-card"
+            onClick={() => navigate('/product/sauvage')}
+            style={{ cursor: "pointer" }}
+          >
             <div className="featured-img">
               <img src={savuage} alt="Aura Magnifique" className="product-img" />
             </div>
@@ -89,7 +95,11 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-          <div className="featured-card">
+          <div
+            className="featured-card"
+            onClick={() => navigate('/product/ultra')}
+            style={{ cursor: "pointer" }}
+          >
             <div className="featured-img" >
             <img src={ultra} alt="Aura Magnifique" className="product-img" />
             </div>
@@ -113,7 +123,11 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-          <div className="featured-card">
+          <div
+            className="featured-card"
+            onClick={() => navigate('/product/bleu')}
+            style={{ cursor: "pointer" }}
+          >
             <div className="featured-img" >
             <img src={bleu} alt="Aura Magnifique" className="product-img" />
             </div>
@@ -137,7 +151,11 @@ const HomePage = () => {
               </div>
             </div>
           </div>
-          <div className="featured-card">
+          <div
+            className="featured-card"
+            onClick={() => navigate('/product/you')}
+            style={{ cursor: "pointer" }}
+          >
             <div className="featured-img" >
             <img src={you} alt="Aura Magnifique" className="product-img" />
             </div>
